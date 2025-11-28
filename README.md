@@ -31,44 +31,40 @@ Type your code in New Editor:
 
 ## Code:
 ```
-function X=f(x)
-    z=5 * (1-x)^2;
-    X=x*z;
-endfunction
-a=2;
-b=3;
-EX=intg(a,b,f);
-function Y=c(y)
-    z=5 * (1-y)^2;
-    Y=y*z;
-endfunction
-EY=intg(a,b,c);
-disp(EX,"i)Mean of X=")
-disp(EY,"Mean of Y=")
+clear; clc; clear;
+function X = f(x)
+    X = 5 * x .* (3 + x).^2;
+end
+a = 0;
+b = 1;
+EX = intg(a, b, f);
+function Y = c(y)
+    Y = 5 * y .* (3 + y).^2;
+end
+EY = intg(a, b, c);
+mprintf("i)   Mean of X = %.2f\n     Mean of Y = %.2f\n", EX, EY);
+function X = g(x)
+    X = x.^2 .* 5 .* (3 + x).^2;
+end
+EX2 = intg(a, b, g);
+function Y = h(y)
+    Y = y.^2 .* 5 .* (3 + y).^2;
+end
+EY2 = intg(a, b, h);
+vX2 = EX2 - (EX)^2;
+vY2 = EY2 - (EY)^2;
+mprintf("ii)  Variance of X = %.6f\n     Variance of Y = %.6f\n", vX2, vY2);
 
-function X=g(x)
-    z=3 * (1-x)^2;
-    X=x **2 *z;
-endfunction
-a=2;
-b=3;
-EX2=intg(a,b,g);
-function Y=h(y)
-    z=3 * (1-y)^2;
-    Y=y **2 *z;
-endfunction
-EY2=intg(a,b,h);
-vX2=EX2-(EX) **2;
-vY2=EY2-(EY) **2;
-disp(vX2,"ii)Variance of X");
-disp(vY2,"Variance of Y");
+x= input("type in the reference sequence="); 
+y= input("type in the second sequence   =");
 
-x=input("type in the reference sequence=");
-y=input("type in the reference sequence=");
 n1=max(size(y))-1;
 n2=max(size(x))-1;
+
 r=corr(x,y,n1);
-plot2d3('gnn',r);
+
+clf();
+plot2d3(1:length(r), r);
 ```
 ## Output:
 
@@ -76,16 +72,14 @@ plot2d3('gnn',r);
 
 ## Calculation:
 
-![WhatsApp Image 2025-11-22 at 20 12 21_1f98bbe1](https://github.com/user-attachments/assets/e6e8572b-d958-42f4-a155-9563daf73889)
-![WhatsApp Image 2025-11-22 at 20 12 51_6c15b144](https://github.com/user-attachments/assets/19ce8011-7b28-48d7-ae2b-6dcda88054f5)
-![WhatsApp Image 2025-11-22 at 20 13 11_2e15dc6a](https://github.com/user-attachments/assets/c4d0e3a8-c2d6-41fe-a389-c9ddcb75de10)
+![WhatsApp Image 2025-11-28 at 21 15 44_34b898f4](https://github.com/user-attachments/assets/77a5d6fb-fb4f-4396-ab41-f1f90a52ec27)
+![WhatsApp Image 2025-11-28 at 21 15 44_dba36154](https://github.com/user-attachments/assets/fda3e728-8d6a-461e-b231-af7234980436)
+![WhatsApp Image 2025-11-28 at 21 16 40_4ff50186](https://github.com/user-attachments/assets/f511df85-8c27-46f1-90a9-8ff59591fe48)
 
 
+i) Mean of X = 47.25 ;Mean of Y = 47.25
 
-
-i) Mean of X = 112.95 ;Mean of Y = 112.97
-
-ii) Variance of X =-12,271.7; Variance of Y =-12,291.6
+ii) Variance of X =-2199.6625; Variance of Y =-2199.6625
 
 Cross Correlation: Type in the reference sequence = [1 2 3 4 5 6 7 8]
 
