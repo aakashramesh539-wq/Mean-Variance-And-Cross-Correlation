@@ -6,7 +6,8 @@ To write a program for mean, variance and cross correlation in SCILAB and verify
 
 ## EQUIPMENTS Needed:
 
-• Computer with i3 Processor • SCI LAB
+• Computer with i3 Processor
+• SCI LAB
 
 ## Algorithm:
 
