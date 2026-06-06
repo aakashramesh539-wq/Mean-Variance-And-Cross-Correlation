@@ -77,6 +77,9 @@ plot2d3('gnn',r);
 
 <img width="760" height="691" alt="Screenshot 2026-05-21 135454" src="https://github.com/user-attachments/assets/0d308867-9120-4bfd-874d-0f35a4fd955b" />
 
+<img width="1542" height="1318" alt="image" src="https://github.com/user-attachments/assets/493035aa-660a-4e0d-b3b8-af77a78627f1" />
+
+
 
 ## Calculation:
 
