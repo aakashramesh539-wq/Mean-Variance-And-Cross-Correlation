@@ -31,6 +31,7 @@ Type your code in New Editor:
 • Verify the generated results.
 
 ## Code:
+
 ```
 clear; 
 clc; 
